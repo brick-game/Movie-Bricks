@@ -1,0 +1,516 @@
+<title>Movie Bricks</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Movie Bricks">
+<meta name="theme-color" content="#F2E9DB">
+<style>
+/* Layout: everything above the fold on a phone. Centered word count, then seven same-size bricks sized from the screen height, then the guess box. */
+:root {
+  --bg: #F2E9DB;
+  --surface: #FAF4E8;
+  --fg: #2B1A12;
+  --muted: #76604F;
+  --line: #D8C9B2;
+  --mortar: #E5D8C2;
+  --mortar-ink: #85705D;
+  --brick: #AE4826;
+  --brick-ink: #FBF1E2;
+  --bad: #A8261F;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bh: clamp(46px, calc((100vh - 330px) / 7), 66px);
+  --bh: clamp(46px, calc((100dvh - 330px) / 7), 66px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1A120E; --surface: #251913; --fg: #F3E7D3; --muted: #B39F8A; --line: #3A2A21;
+    --mortar: #2E211A; --mortar-ink: #A58F7B; --brick: #CB6339; --brick-ink: #1F120B; --bad: #FF8F80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1A120E; --surface: #251913; --fg: #F3E7D3; --muted: #B39F8A; --line: #3A2A21;
+  --mortar: #2E211A; --mortar-ink: #A58F7B; --brick: #CB6339; --brick-ink: #1F120B; --bad: #FF8F80;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.4;
+  padding-inline: 16px;
+  padding-block: 12px 32px;
+}
+.app { max-width: 480px; margin-inline: auto; display: flex; flex-direction: column; gap: 14px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { font-weight: 800; font-size: 17px; line-height: 1; margin: 0; display: flex; align-items: center; gap: 8px; letter-spacing: -.01em; }
+.logo i { display: grid; gap: 2px; }
+.logo i b { display: block; width: 16px; height: 6px; border-radius: 1.5px; background: var(--brick); }
+.logo i b:nth-child(2) { margin-left: 5px; }
+.seg { display: inline-flex; border: 1.5px solid var(--fg); border-radius: 999px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 4px 12px; border-radius: 999px; font-weight: 600; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+
+/* Word count */
+.words { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0; }
+.words .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.words .count { display: flex; align-items: baseline; justify-content: center; gap: 8px; }
+.words .num { font-size: 40px; font-weight: 800; line-height: 1.05; color: var(--brick); font-variant-numeric: tabular-nums; }
+.words .unit { font-size: 15px; font-weight: 600; }
+
+/* Brick wall: seven identical bricks, laid in a running bond */
+.wall { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.row-a, .row-b { margin: 0; }
+.brick {
+  --c: var(--mortar); --ink: var(--mortar-ink);
+  position: relative; display: flex; align-items: center; gap: 12px;
+  width: 100%; height: var(--bh); padding: 0 14px; border-radius: 3px; border: 0; text-align: left; overflow: hidden;
+  background: var(--c); color: var(--ink);
+}
+.brick .label { flex: none; width: 80px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; line-height: 1.25; }
+.brick .label small { display: block; font-size: 12px; letter-spacing: 0; font-weight: 600; }
+.brick .value {
+  flex: 1; min-width: 0; font-size: 18px; font-weight: 700; line-height: 1.15;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere;
+}
+.brick.locked .value { font-weight: 500; letter-spacing: .2em; }
+button.brick.next { box-shadow: inset 0 0 0 2px var(--brick); color: var(--brick); }
+button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(--brick)); }
+.brick .go { margin-left: auto; flex: none; font-weight: 600; font-size: 13px; background: var(--brick); color: var(--brick-ink); padding: 5px 12px; border-radius: 999px; }
+.brick.open {
+  --c: var(--brick); --ink: var(--brick-ink);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .22), inset 0 -3px 0 rgb(0 0 0 / .16);
+}
+.brick.open.t2 { --c: color-mix(in srgb, var(--brick) 88%, #4a1608); }
+.brick.open.t3 { --c: color-mix(in srgb, var(--brick) 90%, #f2a572); }
+.brick.open::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .28; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+}
+.brick.pop { animation: pop .4s cubic-bezier(.3, 1.5, .5, 1); }
+@keyframes pop { from { transform: translateY(14px); opacity: .1; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .brick.pop { animation: none; } }
+
+/* Guess */
+.guess { display: flex; flex-direction: column; gap: 8px; }
+.guess-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.guess-head h2 { margin: 0; font-weight: 700; font-size: 16px; line-height: 1.2; }
+.worth { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.worth b { color: var(--fg); font-weight: 700; }
+.field { position: relative; display: flex; gap: 8px; }
+.field input {
+  flex: 1; min-width: 0; font: inherit; padding: 11px 12px; border-radius: 4px;
+  border: 1.5px solid var(--fg); background: var(--surface); color: var(--fg);
+}
+.field input::placeholder { color: var(--muted); }
+.btn { border: 0; border-radius: 4px; padding: 11px 18px; font-weight: 600; background: var(--brick); color: var(--brick-ink); }
+.btn.ghost { background: transparent; color: var(--fg); border: 1.5px solid var(--fg); }
+.sugg { position: absolute; z-index: 5; left: 0; right: 0; bottom: calc(100% + 6px); margin: 0; padding: 6px; list-style: none;
+  background: var(--surface); border: 1.5px solid var(--fg); border-radius: 4px; box-shadow: 0 10px 30px rgb(43 26 18 / .22); }
+.sugg[hidden] { display: none; }
+.sugg li button { width: 100%; text-align: left; border: 0; background: transparent; padding: 10px; border-radius: 3px; }
+.sugg li button:hover, .sugg li button:focus-visible { background: var(--mortar); }
+.sugg small { color: var(--muted); margin-left: 6px; }
+.wrongs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.wrongs:empty { display: none; }
+.wrongs li { font-size: 13px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); text-decoration: line-through; text-decoration-color: var(--bad); }
+.link { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; font-size: 13px; align-self: flex-start; }
+.msg { min-height: 1.2em; margin: 0; font-size: 13px; color: var(--bad); }
+
+/* Result */
+.result { background: var(--surface); border: 1.5px solid var(--fg); border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.result .kicker { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.result h2 { margin: 0; font-weight: 700; font-size: 22px; line-height: 1.15; text-wrap: balance; }
+.result .score { font-size: 44px; font-weight: 800; line-height: 1; color: var(--brick); font-variant-numeric: tabular-nums; }
+.result .score small { font-size: 14px; color: var(--muted); font-weight: 500; margin-left: 8px; }
+.result .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+.tiles { display: none; }
+
+/* Footer */
+.foot { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; border-top: 1.5px solid var(--fg); padding-top: 14px; margin-top: 8px; }
+.foot details summary { cursor: pointer; font-weight: 600; color: var(--fg); }
+.foot details .inner { display: flex; flex-direction: column; gap: 10px; padding-top: 10px; }
+.foot input { font: inherit; padding: 10px 12px; border-radius: 4px; border: 1.5px solid var(--fg); background: var(--surface); color: var(--fg); min-width: 0; width: 100%; }
+</style>
+
+<main class="app">
+  <header class="top">
+    <h1 class="logo"><i aria-hidden="true"><b></b><b></b></i>Movie Bricks</h1>
+    <div class="seg" role="group" aria-label="Game mode">
+      <button type="button" id="m-daily" aria-pressed="true">Daily</button>
+      <button type="button" id="m-random" aria-pressed="false">Random</button>
+    </div>
+  </header>
+
+  <section class="words" aria-live="polite">
+    <span class="eyebrow" id="date-line">The title has</span>
+    <div class="count"><span class="num" id="wc">–</span><span class="unit" id="wu">words</span></div>
+  </section>
+
+  <ol class="wall" id="wall"></ol>
+
+  <section class="guess" id="guess-box">
+    <div class="guess-head">
+      <h2>Name the film</h2>
+      <span class="worth" id="worth"></span>
+    </div>
+    <form class="field" id="form" autocomplete="off">
+      <input id="guess" type="text" placeholder="Start typing a title" aria-label="Your guess" autocapitalize="off" spellcheck="false">
+      <button class="btn" id="submit" type="submit">Guess</button>
+      <ul class="sugg" id="sugg" hidden></ul>
+    </form>
+    <p class="msg" id="msg" role="status"></p>
+    <ul class="wrongs" id="wrongs"></ul>
+    <button type="button" class="link" id="giveup">Give up</button>
+  </section>
+
+  <section class="result" id="result" hidden aria-live="polite"></section>
+
+  <footer class="foot">
+    <span id="source-note"></span>
+    <details>
+      <summary>Use live TMDB data</summary>
+      <div class="inner">
+        <span>Paste a TMDB API key (v3 key or v4 read token). It stays in this browser. TMDB requests only work when the page is opened as a file or hosted on your own site, because the Claude viewer blocks outside requests.</span>
+        <input id="key" type="password" placeholder="TMDB API key" aria-label="TMDB API key" autocomplete="off">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="btn" id="key-save">Save and reload film</button>
+          <button type="button" class="btn ghost" id="key-clear">Remove key</button>
+        </div>
+      </div>
+    </details>
+    <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  // [title, year, writer(s), director(s), top three billed cast in credit order]
+  var DATA = [
+    ["The Shawshank Redemption",1994,"Frank Darabont","Frank Darabont",["Tim Robbins","Morgan Freeman","Bob Gunton"]],
+    ["Pulp Fiction",1994,"Quentin Tarantino","Quentin Tarantino",["John Travolta","Samuel L. Jackson","Uma Thurman"]],
+    ["Reservoir Dogs",1992,"Quentin Tarantino","Quentin Tarantino",["Harvey Keitel","Tim Roth","Michael Madsen"]],
+    ["The Godfather",1972,"Mario Puzo & Francis Ford Coppola","Francis Ford Coppola",["Marlon Brando","Al Pacino","James Caan"]],
+    ["Apocalypse Now",1979,"John Milius & Francis Ford Coppola","Francis Ford Coppola",["Martin Sheen","Marlon Brando","Robert Duvall"]],
+    ["Jaws",1975,"Peter Benchley & Carl Gottlieb","Steven Spielberg",["Roy Scheider","Robert Shaw","Richard Dreyfuss"]],
+    ["Raiders of the Lost Ark",1981,"Lawrence Kasdan","Steven Spielberg",["Harrison Ford","Karen Allen","Paul Freeman"]],
+    ["Jurassic Park",1993,"Michael Crichton & David Koepp","Steven Spielberg",["Sam Neill","Laura Dern","Jeff Goldblum"]],
+    ["Saving Private Ryan",1998,"Robert Rodat","Steven Spielberg",["Tom Hanks","Tom Sizemore","Edward Burns"]],
+    ["Inception",2010,"Christopher Nolan","Christopher Nolan",["Leonardo DiCaprio","Joseph Gordon-Levitt","Ken Watanabe"]],
+    ["The Dark Knight",2008,"Jonathan Nolan & Christopher Nolan","Christopher Nolan",["Christian Bale","Heath Ledger","Aaron Eckhart"]],
+    ["Oppenheimer",2023,"Christopher Nolan","Christopher Nolan",["Cillian Murphy","Emily Blunt","Matt Damon"]],
+    ["The Matrix",1999,"Lilly Wachowski & Lana Wachowski","Lilly Wachowski & Lana Wachowski",["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss"]],
+    ["Back to the Future",1985,"Robert Zemeckis & Bob Gale","Robert Zemeckis",["Michael J. Fox","Christopher Lloyd","Lea Thompson"]],
+    ["Forrest Gump",1994,"Eric Roth","Robert Zemeckis",["Tom Hanks","Robin Wright","Gary Sinise"]],
+    ["Alien",1979,"Dan O'Bannon","Ridley Scott",["Sigourney Weaver","Tom Skerritt","Veronica Cartwright"]],
+    ["Blade Runner",1982,"Hampton Fancher & David Peoples","Ridley Scott",["Harrison Ford","Rutger Hauer","Sean Young"]],
+    ["Gladiator",2000,"David Franzoni & John Logan","Ridley Scott",["Russell Crowe","Joaquin Phoenix","Connie Nielsen"]],
+    ["Titanic",1997,"James Cameron","James Cameron",["Leonardo DiCaprio","Kate Winslet","Billy Zane"]],
+    ["The Terminator",1984,"James Cameron & Gale Anne Hurd","James Cameron",["Arnold Schwarzenegger","Michael Biehn","Linda Hamilton"]],
+    ["The Silence of the Lambs",1991,"Ted Tally","Jonathan Demme",["Jodie Foster","Anthony Hopkins","Scott Glenn"]],
+    ["Goodfellas",1990,"Nicholas Pileggi & Martin Scorsese","Martin Scorsese",["Robert De Niro","Ray Liotta","Joe Pesci"]],
+    ["Taxi Driver",1976,"Paul Schrader","Martin Scorsese",["Robert De Niro","Jodie Foster","Cybill Shepherd"]],
+    ["Die Hard",1988,"Jeb Stuart & Steven E. de Souza","John McTiernan",["Bruce Willis","Alan Rickman","Bonnie Bedelia"]],
+    ["Ghostbusters",1984,"Dan Aykroyd & Harold Ramis","Ivan Reitman",["Bill Murray","Dan Aykroyd","Sigourney Weaver"]],
+    ["Groundhog Day",1993,"Danny Rubin & Harold Ramis","Harold Ramis",["Bill Murray","Andie MacDowell","Chris Elliott"]],
+    ["Casablanca",1942,"Julius J. Epstein, Philip G. Epstein & Howard Koch","Michael Curtiz",["Humphrey Bogart","Ingrid Bergman","Paul Henreid"]],
+    ["Psycho",1960,"Joseph Stefano","Alfred Hitchcock",["Anthony Perkins","Vera Miles","John Gavin"]],
+    ["Star Wars",1977,"George Lucas","George Lucas",["Mark Hamill","Harrison Ford","Carrie Fisher"]],
+    ["Toy Story",1995,"Joss Whedon, Andrew Stanton & others","John Lasseter",["Tom Hanks","Tim Allen","Don Rickles"]],
+    ["Finding Nemo",2003,"Andrew Stanton","Andrew Stanton & Lee Unkrich",["Albert Brooks","Ellen DeGeneres","Alexander Gould"]],
+    ["Up",2009,"Bob Peterson & Pete Docter","Pete Docter & Bob Peterson",["Edward Asner","Christopher Plummer","Jordan Nagai"]],
+    ["Parasite",2019,"Bong Joon-ho & Han Jin-won","Bong Joon-ho",["Song Kang-ho","Lee Sun-kyun","Cho Yeo-jeong"]],
+    ["Spirited Away",2001,"Hayao Miyazaki","Hayao Miyazaki",["Rumi Hiiragi","Miyu Irino","Mari Natsuki"]],
+    ["Amélie",2001,"Guillaume Laurant & Jean-Pierre Jeunet","Jean-Pierre Jeunet",["Audrey Tautou","Mathieu Kassovitz","Rufus"]],
+    ["Heat",1995,"Michael Mann","Michael Mann",["Al Pacino","Robert De Niro","Val Kilmer"]],
+    ["Ferris Bueller's Day Off",1986,"John Hughes","John Hughes",["Matthew Broderick","Alan Ruck","Mia Sara"]],
+    ["Home Alone",1990,"John Hughes","Chris Columbus",["Macaulay Culkin","Joe Pesci","Daniel Stern"]],
+    ["Rocky",1976,"Sylvester Stallone","John G. Avildsen",["Sylvester Stallone","Talia Shire","Burt Young"]],
+    ["Trainspotting",1996,"John Hodge","Danny Boyle",["Ewan McGregor","Ewen Bremner","Jonny Lee Miller"]],
+    ["Shaun of the Dead",2004,"Simon Pegg & Edgar Wright","Edgar Wright",["Simon Pegg","Nick Frost","Kate Ashfield"]],
+    ["Monty Python and the Holy Grail",1975,"Graham Chapman, John Cleese & others","Terry Gilliam & Terry Jones",["Graham Chapman","John Cleese","Eric Idle"]],
+    ["Mad Max: Fury Road",2015,"George Miller, Brendan McCarthy & Nico Lathouris","George Miller",["Tom Hardy","Charlize Theron","Nicholas Hoult"]],
+    ["Whiplash",2014,"Damien Chazelle","Damien Chazelle",["Miles Teller","J.K. Simmons","Paul Reiser"]],
+    ["Get Out",2017,"Jordan Peele","Jordan Peele",["Daniel Kaluuya","Allison Williams","Bradley Whitford"]],
+    ["Knives Out",2019,"Rian Johnson","Rian Johnson",["Daniel Craig","Chris Evans","Ana de Armas"]],
+    ["The Grand Budapest Hotel",2014,"Wes Anderson","Wes Anderson",["Ralph Fiennes","F. Murray Abraham","Mathieu Amalric"]],
+    ["The Princess Bride",1987,"William Goldman","Rob Reiner",["Cary Elwes","Mandy Patinkin","Chris Sarandon"]],
+    ["The Sixth Sense",1999,"M. Night Shyamalan","M. Night Shyamalan",["Bruce Willis","Haley Joel Osment","Toni Collette"]],
+    ["Braveheart",1995,"Randall Wallace","Mel Gibson",["Mel Gibson","Sophie Marceau","Patrick McGoohan"]],
+    ["Good Will Hunting",1997,"Matt Damon & Ben Affleck","Gus Van Sant",["Robin Williams","Matt Damon","Ben Affleck"]],
+    ["The Lord of the Rings: The Fellowship of the Ring",2001,"Fran Walsh, Philippa Boyens & Peter Jackson","Peter Jackson",["Elijah Wood","Ian McKellen","Viggo Mortensen"]],
+    ["Singin' in the Rain",1952,"Betty Comden & Adolph Green","Gene Kelly & Stanley Donen",["Gene Kelly","Donald O'Connor","Debbie Reynolds"]],
+    ["Citizen Kane",1941,"Herman J. Mankiewicz & Orson Welles","Orson Welles",["Orson Welles","Joseph Cotten","Dorothy Comingore"]],
+    ["Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",1964,"Stanley Kubrick, Terry Southern & Peter George","Stanley Kubrick",["Peter Sellers","George C. Scott","Sterling Hayden"]],
+    ["The Shining",1980,"Stanley Kubrick & Diane Johnson","Stanley Kubrick",["Jack Nicholson","Shelley Duvall","Danny Lloyd"]]
+  ];
+
+  var LOCAL = DATA.map(function (d, i) {
+    return { id: "L" + i, title: d[0], year: String(d[1]), writer: d[2], director: d[3], cast: d[4] };
+  });
+
+  // Brick order: year, writer, 3rd billed, 2nd billed, director, 1st billed.
+  var BRICKS = [
+    { label: "Year",       color: "red",    get: function (f) { return f.year; } },
+    { label: "Writer",     color: "blue",   get: function (f) { return f.writer; } },
+    { label: "3rd billed", color: "yellow", get: function (f) { return f.cast[2]; } },
+    { label: "2nd billed", color: "green",  get: function (f) { return f.cast[1]; } },
+    { label: "Director",   color: "orange", get: function (f) { return f.director; } },
+    { label: "1st billed", color: "white",  get: function (f) { return f.cast[0]; } }
+  ];
+  var EMOJI = { red: "🟥", blue: "🟦", yellow: "🟨", green: "🟩", orange: "🟧", white: "⬜" };
+  // Points for solving with N bricks revealed (index = N). Each wrong guess costs 5.
+  var POINTS = [120, 100, 80, 60, 40, 20, 10];
+  var WRONG_COST = 5;
+
+  function score(revealed, wrongs) { return Math.max(0, POINTS[revealed] - WRONG_COST * wrongs); }
+
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function norm(s) {
+    return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/&/g, " and ").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim().replace(/^(the|a|an) /, "");
+  }
+  function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function dateKey() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} return null; }
+
+  /* ---------- TMDB ---------- */
+  // PASTE YOUR TMDB KEY BETWEEN THE QUOTES BELOW (v3 API key or v4 read access token).
+  var TMDB_KEY = "";
+  function tmKey() { return TMDB_KEY.trim() || store("mb-tmdb-key") || ""; }
+  function tm(path, params) {
+    var key = tmKey(), u = new URL("https://api.themoviedb.org/3" + path), headers = {};
+    if (key.length > 40) headers.Authorization = "Bearer " + key; else u.searchParams.set("api_key", key);
+    Object.keys(params || {}).forEach(function (k) { u.searchParams.set(k, params[k]); });
+    return fetch(u.toString(), { headers: headers }).then(function (r) { if (!r.ok) throw new Error("TMDB " + r.status); return r.json(); });
+  }
+  function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
+  function joinNames(a) { return a.length < 2 ? (a[0] || "") : a.slice(0, -1).join(", ") + " & " + a[a.length - 1]; }
+  function fromTmdb(d) {
+    var credits = d.credits || {}, crew = credits.crew || [], cast = (credits.cast || []).slice(0, 3).map(function (c) { return c.name; });
+    var dirs = uniq(crew.filter(function (c) { return c.job === "Director"; }).map(function (c) { return c.name; })).slice(0, 2);
+    var wr = crew.filter(function (c) { return c.job === "Screenplay" || c.job === "Writer"; });
+    if (!wr.length) wr = crew.filter(function (c) { return c.job === "Story" || c.job === "Novel" || c.job === "Characters"; });
+    wr = uniq(wr.map(function (c) { return c.name; })).slice(0, 3);
+    var year = (d.release_date || "").slice(0, 4);
+    if (cast.length < 3 || !dirs.length || !wr.length || !year) return null;
+    return { id: "T" + d.id, tmdb: d.id, title: d.title, year: year, writer: joinNames(wr), director: joinNames(dirs), cast: cast };
+  }
+  function tmFilm(seed) {
+    var page = seed == null ? 1 + Math.floor(Math.random() * 25) : 1 + (seed % 25);
+    return tm("/movie/top_rated", { page: page }).then(function (list) {
+      var res = list.results, start = seed == null ? Math.floor(Math.random() * res.length) : Math.floor(seed / 25) % res.length, i = 0;
+      function next() {
+        if (i >= res.length) throw new Error("no film");
+        var m = res[(start + i++) % res.length];
+        return tm("/movie/" + m.id, { append_to_response: "credits" }).then(function (d) { return fromTmdb(d) || next(); });
+      }
+      return next();
+    });
+  }
+
+  /* ---------- State ---------- */
+  var S = { mode: "daily", film: null, revealed: 0, wrongs: [], done: false, won: false, source: "local", pickedId: null, popIndex: -1 };
+
+  function persistKey() { return "mb:" + dateKey() + ":" + S.source; }
+  function save() {
+    if (S.mode !== "daily" || !S.film) return;
+    store(persistKey(), JSON.stringify({ revealed: S.revealed, wrongs: S.wrongs, done: S.done, won: S.won }));
+  }
+
+  function pickLocal(seed) {
+    var i = seed == null ? Math.floor(Math.random() * LOCAL.length) : seed % LOCAL.length;
+    return LOCAL[i];
+  }
+
+  function loadFilm() {
+    var seed = S.mode === "daily" ? hash("movie-bricks-" + dateKey()) : null;
+    S.film = null; S.revealed = 0; S.wrongs = []; S.done = false; S.won = false; S.pickedId = null; S.popIndex = -1;
+    $("wc").textContent = "–";
+    $("msg").textContent = "";
+    var note = $("source-note");
+    var finish = function (film, source, message) {
+      S.film = film; S.source = source;
+      if (S.mode === "daily") {
+        var saved = store(persistKey());
+        if (saved) { try { var p = JSON.parse(saved); S.revealed = p.revealed; S.wrongs = p.wrongs; S.done = p.done; S.won = p.won; } catch (e) {} }
+      }
+      note.textContent = message || (source === "tmdb" ? "Film data from TMDB." : "Playing with the built-in set of " + LOCAL.length + " films.");
+      render();
+    };
+    if (tmKey()) {
+      $("wc").textContent = "…";
+      tmFilm(seed).then(function (f) { finish(f, "tmdb"); })
+        .catch(function () { finish(pickLocal(seed), "local", "Couldn't reach TMDB from here, so this round uses the built-in set of " + LOCAL.length + " films."); });
+    } else {
+      finish(pickLocal(seed), "local");
+    }
+  }
+
+  /* ---------- Render ---------- */
+  function render() {
+    var f = S.film; if (!f) return;
+    var words = f.title.trim().split(/\s+/).length;
+    $("wc").textContent = words;
+    $("wu").textContent = words === 1 ? "word" : "words";
+    $("date-line").textContent = S.mode === "daily"
+      ? "Film of " + new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long" }) + " has"
+      : "This random film has";
+
+    var wall = $("wall"); wall.textContent = "";
+    // Top to bottom: title brick, then the bricks in reverse reveal order, so the wall is built from the bottom up.
+    var rows = [{ title: true }].concat(BRICKS.map(function (b, i) { return { b: b, i: i }; }).reverse());
+    rows.forEach(function (r, pos) {
+      var li = el("li", pos % 2 ? "row-b" : "row-a"), node, open, label, value, year = "", isNext = false;
+      if (r.title) {
+        open = S.done; label = "Title"; if (open) year = f.year;
+        value = open ? f.title : f.title.trim().split(/\s+/).map(function () { return "?"; }).join(" ");
+      } else {
+        open = r.i < S.revealed || S.done; isNext = !open && r.i === S.revealed;
+        label = r.b.label; value = open ? r.b.get(f) : "?";
+      }
+      var lab = el("span", "label", label); if (year) lab.appendChild(el("small", null, year));
+      if (isNext) {
+        node = el("button", "brick next"); node.type = "button";
+        node.appendChild(lab); node.appendChild(el("span", "go", "Reveal"));
+        node.setAttribute("aria-label", "Reveal brick: " + label);
+        node.addEventListener("click", reveal);
+      } else {
+        node = el("div", "brick" + (r.title ? " title" : "") + (open ? " open t" + (pos % 3 + 1) : " locked") + (open && (r.title || r.i === S.popIndex) && (r.title ? S.done : true) ? " pop" : ""));
+        node.appendChild(lab); node.appendChild(el("span", "value", value));
+      }
+      li.appendChild(node); wall.appendChild(li);
+    });
+    S.popIndex = -1;
+
+    var worth = $("worth");
+    worth.textContent = "";
+    if (!S.done) {
+      worth.appendChild(document.createTextNode("Solve now: "));
+      worth.appendChild(el("b", null, score(S.revealed, S.wrongs.length) + " pts"));
+    }
+    var wr = $("wrongs"); wr.textContent = "";
+    S.wrongs.forEach(function (w) { wr.appendChild(el("li", null, w)); });
+    $("guess-box").hidden = S.done;
+    renderResult();
+  }
+
+  function renderResult() {
+    var box = $("result");
+    if (!S.done) { box.hidden = true; return; }
+    box.hidden = false; box.textContent = "";
+    var f = S.film, pts = S.won ? score(S.revealed, S.wrongs.length) : 0;
+    box.appendChild(el("p", "kicker", S.won ? "Solved" : "It was"));
+    box.appendChild(el("h2", null, f.title + " (" + f.year + ")"));
+    var sc = el("div", "score", String(pts)); sc.appendChild(el("small", null, S.won
+      ? "points · " + S.revealed + (S.revealed === 1 ? " brick" : " bricks") + (S.wrongs.length ? " · " + S.wrongs.length + " wrong" : "")
+      : "points")); box.appendChild(sc);
+    var tiles = el("div", "tiles"); tiles.setAttribute("aria-hidden", "true");
+    BRICKS.slice().reverse().forEach(function (b, k) { tiles.appendChild(el("span", BRICKS.length - 1 - k < S.revealed ? "t-on" : "t-off")); });
+    box.appendChild(tiles);
+    var row = el("div", "row");
+    if (S.won) {
+      var share = el("button", "btn", "Copy result"); share.type = "button";
+      share.addEventListener("click", function () { copyShare(share); }); row.appendChild(share);
+    }
+    var again = el("button", "btn" + (S.won ? " ghost" : ""), S.mode === "daily" ? "Play a random film" : "Next film"); again.type = "button";
+    again.addEventListener("click", function () { setMode("random", true); }); row.appendChild(again);
+    box.appendChild(row);
+    if (S.mode === "daily") box.appendChild(el("p", "worth", "Come back tomorrow for a new daily film."));
+  }
+
+  function shareText() {
+    var d = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+    var grid = BRICKS.map(function (b, i) { return i < S.revealed ? "🟫" : "⬜"; }).reverse().join("");
+    return "Movie Bricks" + (S.mode === "daily" ? " · " + d : "") + "\n" + grid + "\n" + S.revealed + " bricks · " + score(S.revealed, S.wrongs.length) + " pts";
+  }
+  function copyShare(btn) {
+    var t = shareText(), done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy result"; }, 1800); };
+    try { navigator.clipboard.writeText(t).then(done, function () { window.prompt && 0; btn.textContent = "Copy not allowed here"; }); }
+    catch (e) { btn.textContent = "Copy not allowed here"; }
+  }
+
+  /* ---------- Actions ---------- */
+  function reveal() {
+    if (S.done || S.revealed >= BRICKS.length) return;
+    S.popIndex = S.revealed; S.revealed++; save(); render();
+  }
+  function finishGame(won) { S.done = true; S.won = won; save(); render(); var r = $("result"); if (r && r.scrollIntoView) r.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+
+  function submit(e) {
+    e.preventDefault();
+    if (S.done || !S.film) return;
+    var input = $("guess"), raw = input.value.trim();
+    if (!raw) return;
+    var ok = (S.pickedId && S.pickedId === S.film.id) || (S.source === "local" ? norm(raw) === norm(S.film.title) : norm(raw) === norm(S.film.title));
+    $("sugg").hidden = true;
+    if (ok) { input.value = ""; finishGame(true); return; }
+    var already = S.wrongs.some(function (w) { return norm(w) === norm(raw); });
+    if (already) { $("msg").textContent = "You already tried that one."; return; }
+    S.wrongs.push(raw); S.pickedId = null; input.value = ""; $("msg").textContent = "Not that one. −" + WRONG_COST + " points.";
+    save(); render(); input.focus();
+  }
+
+  /* Suggestions */
+  var suggTimer = null;
+  function showSuggestions(items) {
+    var ul = $("sugg"); ul.textContent = "";
+    if (!items.length) { ul.hidden = true; return; }
+    items.forEach(function (it) {
+      var li = el("li"), b = el("button", null, it.title); b.type = "button";
+      if (it.year) b.appendChild(el("small", null, it.year));
+      b.addEventListener("click", function () { $("guess").value = it.title; S.pickedId = it.id; ul.hidden = true; $("guess").focus(); });
+      li.appendChild(b); ul.appendChild(li);
+    });
+    ul.hidden = false;
+  }
+  function onType() {
+    S.pickedId = null; $("msg").textContent = "";
+    var q = $("guess").value.trim(); clearTimeout(suggTimer);
+    if (q.length < 2) { $("sugg").hidden = true; return; }
+    if (S.source === "tmdb") {
+      suggTimer = setTimeout(function () {
+        tm("/search/movie", { query: q }).then(function (r) {
+          showSuggestions(r.results.slice(0, 6).map(function (m) { return { id: "T" + m.id, title: m.title, year: (m.release_date || "").slice(0, 4) }; }));
+        }).catch(function () { $("sugg").hidden = true; });
+      }, 250);
+    } else {
+      var n = norm(q);
+      showSuggestions(LOCAL.filter(function (f) { return norm(f.title).indexOf(n) !== -1; }).slice(0, 6).map(function (f) { return { id: f.id, title: f.title, year: "" }; }));
+    }
+  }
+
+  function setMode(m, force) {
+    if (m === S.mode && !force) return;
+    S.mode = m;
+    $("m-daily").setAttribute("aria-pressed", String(m === "daily"));
+    $("m-random").setAttribute("aria-pressed", String(m === "random"));
+    $("guess").value = ""; $("sugg").hidden = true;
+    loadFilm();
+  }
+
+  $("form").addEventListener("submit", submit);
+  $("guess").addEventListener("input", onType);
+  $("giveup").addEventListener("click", function () { if (!S.done && S.film) { S.revealed = BRICKS.length; finishGame(false); } });
+  $("m-daily").addEventListener("click", function () { setMode("daily"); });
+  $("m-random").addEventListener("click", function () { if (S.mode === "random") loadFilm(); else setMode("random"); });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".field")) $("sugg").hidden = true; });
+  $("key").value = tmKey() ? "••••••••" : "";
+  $("key-save").addEventListener("click", function () {
+    var v = $("key").value.trim(); if (v && v.indexOf("•") === -1) store("mb-tmdb-key", v); loadFilm();
+  });
+  $("key-clear").addEventListener("click", function () { store("mb-tmdb-key", null); $("key").value = ""; loadFilm(); });
+
+  loadFilm();
+})();
+</script>
