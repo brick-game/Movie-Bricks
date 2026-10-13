@@ -478,7 +478,9 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     if (S.source === "tmdb") {
       suggTimer = setTimeout(function () {
         tm("/search/movie", { query: q }).then(function (r) {
-          showSuggestions(r.results.slice(0, 6).map(function (m) { return { id: "T" + m.id, title: m.title, year: (m.release_date || "").slice(0, 4) }; }));
+          var seen = {};
+          showSuggestions(r.results.filter(function (m) { var k = norm(m.title); if (seen[k]) return false; seen[k] = 1; return true; })
+            .slice(0, 6).map(function (m) { return { id: "T" + m.id, title: m.title }; }));
         }).catch(function () { $("sugg").hidden = true; });
       }, 250);
     } else {
