@@ -304,9 +304,13 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     return { id: "T" + d.id, tmdb: d.id, title: d.title, year: year, writer: joinNames(wr), director: joinNames(dirs), cast: cast };
   }
   function tmFilm(seed) {
-    var page = seed == null ? 1 + Math.floor(Math.random() * 25) : 1 + (seed % 25);
-    return tm("/movie/top_rated", { page: page }).then(function (list) {
-      var res = list.results, start = seed == null ? Math.floor(Math.random() * res.length) : Math.floor(seed / 25) % res.length, i = 0;
+    // Well-known English-language films only: lots of votes, already released, sorted by how many people rated them.
+    var PAGES = 15, page = seed == null ? 1 + Math.floor(Math.random() * PAGES) : 1 + (seed % PAGES);
+    return tm("/discover/movie", {
+      page: page, sort_by: "vote_count.desc", "vote_count.gte": 4000, with_original_language: "en",
+      include_adult: "false", language: "en-US", "primary_release_date.lte": dateKey()
+    }).then(function (list) {
+      var res = list.results, start = seed == null ? Math.floor(Math.random() * res.length) : Math.floor(seed / PAGES) % res.length, i = 0;
       function next() {
         if (i >= res.length) throw new Error("no film");
         var m = res[(start + i++) % res.length];
