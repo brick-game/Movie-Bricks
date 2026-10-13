@@ -120,7 +120,7 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
 .field input::placeholder { color: var(--muted); }
 .btn { border: 0; border-radius: 4px; padding: 11px 18px; font-weight: 600; background: var(--brick); color: var(--brick-ink); }
 .btn.ghost { background: transparent; color: var(--fg); border: 1.5px solid var(--fg); }
-.sugg { position: absolute; z-index: 5; left: 0; right: 0; bottom: calc(100% + 6px); margin: 0; padding: 6px; list-style: none;
+.sugg { position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 6px); margin: 0; padding: 6px; list-style: none;
   background: var(--surface); border: 1.5px solid var(--fg); border-radius: 4px; box-shadow: 0 10px 30px rgb(43 26 18 / .22); }
 .sugg[hidden] { display: none; }
 .sugg li button { width: 100%; text-align: left; border: 0; background: transparent; padding: 10px; border-radius: 3px; }
@@ -164,8 +164,6 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     <div class="count"><span class="num" id="wc">–</span><span class="unit" id="wu">words</span></div>
   </section>
 
-  <ol class="wall" id="wall"></ol>
-
   <section class="guess" id="guess-box">
     <div class="guess-head">
       <h2>Name the film</h2>
@@ -180,6 +178,8 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     <ul class="wrongs" id="wrongs"></ul>
     <button type="button" class="link" id="giveup">Give up</button>
   </section>
+  <ol class="wall" id="wall"></ol>
+
 
   <section class="result" id="result" hidden aria-live="polite"></section>
 
