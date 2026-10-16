@@ -421,7 +421,7 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     box.appendChild(tiles);
     var row = el("div", "row");
     if (S.won) {
-      var share = el("button", "btn", "Copy result"); share.type = "button";
+      var share = el("button", "btn", "Share result"); share.type = "button";
       share.addEventListener("click", function () { copyShare(share); }); row.appendChild(share);
     }
     var again = el("button", "btn" + (S.won ? " ghost" : ""), S.mode === "daily" ? "Play a random film" : "Next film"); again.type = "button";
@@ -442,7 +442,7 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     return;
   }
   // ...the rest of your existing function stays exactly as it is
-    var t = shareText(), done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy result"; }, 1800); };
+    var t = shareText(), done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Share result"; }, 1800); };
     try { navigator.clipboard.writeText(t).then(done, function () { window.prompt && 0; btn.textContent = "Copy not allowed here"; }); }
     catch (e) { btn.textContent = "Copy not allowed here"; }
   }
