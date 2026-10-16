@@ -433,7 +433,7 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
   function shareText() {
     var d = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" });
     var grid = BRICKS.map(function (b, i) { return i < S.revealed ? "🟫" : "⬜"; }).reverse().join("");
-    return "Movie Bricks" + (S.mode === "daily" ? " · " + d : "") + "\n" + grid + "\n" + S.revealed + " bricks · " + score(S.revealed, S.wrongs.length) + " pts";
+    return "Movie Bricks" + (S.mode === "daily" ? " · " + d : "") + "\n" + grid + "\n" + S.revealed + " bricks · " + score(S.revealed, S.wrongs.length) + " pts" + " https://brickgames.co.uk/Movie-Bricks/";
   }
   function copyShare(btn) {
     var t = shareText(), done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy result"; }, 1800); };
