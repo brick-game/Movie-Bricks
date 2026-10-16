@@ -436,6 +436,12 @@ button.brick.next:hover { background: color-mix(in srgb, var(--mortar) 70%, var(
     return "Movie Bricks" + (S.mode === "daily" ? " · " + d : "") + "\n" + grid + "\n" + S.revealed + " bricks · " + score(S.revealed, S.wrongs.length) + " pts" + " brickgames.co.uk/Movie-Bricks/";
   }
   function copyShare(btn) {
+  var t0 = shareText();
+  if (navigator.share) {
+    navigator.share({ text: t0 }).catch(function () {});
+    return;
+  }
+  // ...the rest of your existing function stays exactly as it is
     var t = shareText(), done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy result"; }, 1800); };
     try { navigator.clipboard.writeText(t).then(done, function () { window.prompt && 0; btn.textContent = "Copy not allowed here"; }); }
     catch (e) { btn.textContent = "Copy not allowed here"; }
